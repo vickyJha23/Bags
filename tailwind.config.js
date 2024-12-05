@@ -5,6 +5,8 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [".swiper-pagination-bullet", ".swiper-pagination-bullet-active", ".swiper-button-next", ".swiper-button-prev", ".swiper-wrapper", ".swiper-pagination"],
+
   theme: {
     extend: {
        colors:{

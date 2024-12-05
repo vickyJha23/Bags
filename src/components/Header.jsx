@@ -10,7 +10,7 @@ import images from '../assets/images/image';
 // components import
 import Logo from './Logo';
 import NavigationMenu from './NavigationMenu';
-import HambergerMenu from './HambergerMenu';
+import HambergerMenu from './HamburgerMenu';
 import SearchBar from './SearchBar';
 import Cart from './Cart';
 import Hero from './Hero';
@@ -26,7 +26,7 @@ const Header = () => {
 
 
   return (
-    <main className='min-h-screen'>
+    <header className='h-screen md:h-auto'>
       <div>
         <div className='w-full h-16 py-4 px-3 grid place-items-center lg:px-0 bg-primaryColor lg:bg-secondaryColor border-b lg:border-none'>
           <nav className='w-full h-full  flex justify-between items-center lg:max-w-[1170px] lg:mx-auto'>
@@ -58,7 +58,7 @@ const Header = () => {
         <HambergerMenu />
       </div>
       <Hero />
-    </main>
+    </header>
   )
 }
 

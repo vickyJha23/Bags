@@ -20,7 +20,7 @@ if(!isHamburgerMenuVisible){
         if(!e.target.closest("button") && !e.target.closest("#hamburgetContainer")){
              hideHamburgerMenu();
         }   
- }} className='w-full min-h-screen lg:hidden bg-[rgba(0,0,0,0.7)] fixed top-0 left-0'>
+ }} className='w-full min-h-screen lg:hidden bg-[rgba(0,0,0,0.7)] fixed z-40 top-0 left-0'>
           <div id="hamburgetContainer" className='absolute right-0 bg-white h-full w-5/6'>
               <div className='grid h-full grid-rows-[auto,1fr]'>
                     <div className='bg-secondaryColor h-12 flex items-center px-3'>

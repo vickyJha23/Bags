@@ -20,7 +20,7 @@ if(!isSearchBarVisible){
 
 
 return (
-     <div className="w-full min-h-screen px-6 lg:px-0 fixed top-0 left-0 bg-[rgba(0,0,0,0.8)] grid place-items-center">
+     <div className="w-full min-h-screen px-6 lg:px-0 fixed z-10 top-0 left-0 bg-[rgba(0,0,0,0.8)] grid place-items-center">
        {/* Main Search Bar Container */}
        <div className="w-full max-w-[1170px] h-12 border">
          <form className="flex h-full">

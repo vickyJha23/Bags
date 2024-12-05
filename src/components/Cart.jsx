@@ -17,7 +17,7 @@ if(!isCartVisible){
         if(!e.target.closest("button") && !e.target.matches("#cartContainer") && !e.target.closest("div#cartContainer")){
               hideCart();
         }
-   }} className='w-full min-h-screen fixed top-0 left-0 bg-[rgba(0,0,0,0.5)]'>
+   }} className='w-full min-h-screen fixed z-10 top-0 left-0 bg-[rgba(0,0,0,0.5)]'>
        <div id='cartContainer' className='absolute top-0 right-0 w-full h-full lg:max-w-sm bg-white'>
        <div className='grid h-full grid-rows-[auto,1fr,auto]'>
              <div className='flex h-12 px-6 bg-secondaryColor justify-between items-center text-white'>
