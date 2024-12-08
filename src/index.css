@@ -11,10 +11,10 @@
           justify-content: center !important;
           align-items: center !important;
      }
-
+     
      .swiper-pagination-bullet{
-          width: 10px !important;
-          height: 10px !important;
+          width: 6px !important;
+          height: 6px !important;
           background-color: transparent !important;
           border-radius: 50%;
           padding: 8px !important;
@@ -25,29 +25,49 @@
           transform: none !important;
      }
      @media screen and (max-width: 1024px){
-         .swiper-pagination-bullet{
-             display: none !important;
-         }
+          .swiper-pagination-bullet{
+               display: none !important;
+          }
      }
      .swiper-pagination-bullet-active{
           @apply border-2 border-primaryColor;
      }
-   .swiper-button-next, .swiper-button-prev{
-        background-color: tomato;
-        color: white !important;
-        padding: 2px 20px !important;
-        opacity: 1 !important;
-   }
+     .swiper-button-next, .swiper-button-prev{
+          background-color: tomato;
+          color: white !important;
+          padding: 2px 20px !important;
+          opacity: 1 !important;
+          transition: all 0.5s linear;
+     }
+     
+     .swiper-button-next::after, .swiper-button-prev::after{
+          font-size: 14px !important;
+          content: "";
+     }
+     .swiper-wrapper{
+          transform: none !important;
+          height: auto !important;
+          
+     }
+     #bagCardContainer .swiper-button-prev, #bagCardContainer .swiper-button-next{
+            transform: scale(0) !important;
+     }
 
-   .swiper-button-next::after, .swiper-button-prev::after{
-     font-size: 14px !important;
-     content: "";
-   }
-   .swiper-wrapper{
-       transform: none !important;
-       height: auto !important;
-       position:  relative !important;
-       background: red !important;
-   }
+     #bagCardContainer .swiper-pagination{
+          position: relative !important;
+          bottom: 0px;
+          z-index: 50;
+     }
+     #bagCardContainer .swiper:hover .swiper-button-prev, #bagCardContainer .swiper:hover .swiper-button-next {
+           transform: scale(1) !important;
+     }
+   @media screen and (max-width: 1024px){
+     /* #bagCardContainer .swiper-pagination {
+           /* bottom: 0px !important; 
+     } */
+     #bagCardContainer .swiper-pagination-bullet{
+          display: block !important;
+     }
 
+   }
 }

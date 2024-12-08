@@ -5,7 +5,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  safelist: [".swiper-pagination-bullet", ".swiper-pagination-bullet-active", ".swiper-button-next", ".swiper-button-prev", ".swiper-wrapper", ".swiper-pagination"],
+  safelist: [".swiper-pagination-bullet", ".swiper-pagination-bullet-active", ".swiper-button-next", ".swiper-button-prev", ".swiper-wrapper", ".swiper-pagination", "#bagCardContainer .swiper-pagination", "#bagCardContainer .swiper-pagination", "  #bagCardContainer .swiper:hover .swiper-pagination"],
 
   theme: {
     extend: {

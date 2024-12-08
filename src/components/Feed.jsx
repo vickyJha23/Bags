@@ -21,7 +21,7 @@ const Feed = ({ products = [], isPaginationRequired = false }) => {
         return null;
   }
   return (
-    <div className='mt-8 w-full'>
+    <div id="bagCardContainer" className='mt-8 w-full h-full'>
          <Swiper className='w-full h-full' modules={[Navigation, Pagination]} breakpoints={{
              0: {
               slidesPerView: 1,
@@ -37,10 +37,11 @@ const Feed = ({ products = [], isPaginationRequired = false }) => {
       pagination={
         isPaginationRequired ? {clickable: true,
         renderBullet: function(_, className){
-          return `<span class="${className} !absolute top-0">
-          <span class="inline-block w-[8px] h-[8px] !bg-white absolute z-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"></span>
+          return `<span class="${className}">
+          <span class="inline-block w-[5px] h-[5px] !bg-white absolute z-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"></span>
    </span>`
         }
+
 
         }:false
       }

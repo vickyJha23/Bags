@@ -26,7 +26,7 @@ const Header = () => {
 
 
   return (
-    <header className='h-screen md:h-auto'>
+    <header className='h-screen md:h-auto mb-[160px]'>
       <div>
         <div className='w-full h-16 py-4 px-3 grid place-items-center lg:px-0 bg-primaryColor lg:bg-secondaryColor border-b lg:border-none'>
           <nav className='w-full h-full  flex justify-between items-center lg:max-w-[1170px] lg:mx-auto'>

@@ -6,7 +6,6 @@ import Button from "./Button";
 // component imports
 import CardModal from './CardModal';
 import PriceDisplayer from './PriceDisplayer';
-import { BiColor } from 'react-icons/bi';
 
 const Card = ({product, id}) => {
   const [isCardModalVisible, setIsCardModalVisible] = useState(false);
@@ -14,8 +13,8 @@ const Card = ({product, id}) => {
       setIsCardModalVisible(prevState => !prevState);
   }
   return (
-   <div data-id={id}> 
-    <div className='w-auto h-1/2 rounded-[25px] bg-secondaryColor shadow-md  border border-borderColor py-2'>
+   <div data-id={id} className='mb-4'> 
+    <div className='rounded-[25px] bg-secondaryColor shadow-md  border border-borderColor py-2'>
      <div className='w-full h-auto relative'>
            <img src={product.variants[0].images[0]} alt="()" className='w-full h-full object-cover' />
            <button onClick={handleCardVisibility} className='bg-primaryColor text-white grid place-items-center w-6 h-6 rotate-90 absolute top-3 right-3 rounded-md'>
@@ -42,7 +41,7 @@ const Card = ({product, id}) => {
                </div>
            <PriceDisplayer currentPrice={"Rs. "+product.price.current} originalPrice={"Rs. "+product.price.originalPrice} />
          </div>
-         <div className='flex justify-between items-center'>
+         <div className='flex items-start flex-col lg:flex-row lg:justify-between lg:items-center'>
               <CounterComponent />
               <Button content='Add to Cart' /> 
          </div>
