@@ -22,7 +22,9 @@ const Feed = ({ products = [], isPaginationRequired = false }) => {
   }
   return (
     <div id="bagCardContainer" className='mt-8 w-full h-full'>
-         <Swiper className='w-full h-full' modules={[Navigation, Pagination]} breakpoints={{
+         <Swiper className='w-full h-full' modules={[Navigation, Pagination]}
+         speed={2000}
+         breakpoints={{
              0: {
               slidesPerView: 1,
              },             
@@ -48,7 +50,7 @@ const Feed = ({ products = [], isPaginationRequired = false }) => {
       >
             {products.map((product, index) => {
               return <SwiperSlide key={index} className='!transform-none'>
-                     <Card  product={product} id={product.id} />
+                     <Card  product={product} />
                  </SwiperSlide>
               })}
          </Swiper>

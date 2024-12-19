@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { FaEye } from "react-icons/fa";
 import CounterComponent from './CounterComponent'
 import Button from "./Button";
@@ -6,18 +6,36 @@ import Button from "./Button";
 // component imports
 import CardModal from './CardModal';
 import PriceDisplayer from './PriceDisplayer';
+import useModalStore from '../zustand-store/ModalStore';
 
-const Card = ({product, id}) => {
-  const [isCardModalVisible, setIsCardModalVisible] = useState(false);
-  const handleCardVisibility = () => {
-      setIsCardModalVisible(prevState => !prevState);
-  }
+
+
+
+const Card = ({product}) => {
+  const initializeModal = useModalStore((state) => state.initializeModal)
+  const openModal = useModalStore((state) => state.openModal);
+  const setProductColor = useModalStore((state) => state.setProductColor);
+  const productColor = useModalStore((state) => state.modals[product.id]?.productColor);
+  const setSelectedProduct = useModalStore((state) => state.setSelectedProduct)
+  const selectedProduct = useModalStore((state) => state.modals[product.id]?.selectedProduct);
+  const handleActiveIndex = useModalStore((state) => state.handleActiveIndex);
+  const activeIndex = useModalStore((state) => state.activeIndex);
+
+  useEffect(() => {
+    initializeModal(product.id, product.variants[0].color, product) 
+  }, [initializeModal, product.id, product.variants, product]) 
+
+ useEffect(() => {
+     console.log("Har Har Mahdev");
+     if(productColor) {return setSelectedProduct(product.id, productColor, product)};
+ }, [productColor, product.id, product]) 
+
   return (
-   <div data-id={id} className='mb-4'> 
+   <div data-id={product.id} className='mb-4 relative z-10'> 
     <div className='rounded-[25px] bg-secondaryColor shadow-md  border border-borderColor py-2'>
-     <div className='w-full h-auto relative'>
-           <img src={product.variants[0].images[0]} alt="()" className='w-full h-full object-cover' />
-           <button onClick={handleCardVisibility} className='bg-primaryColor text-white grid place-items-center w-6 h-6 rotate-90 absolute top-3 right-3 rounded-md'>
+     <div className='w-full h-full relative z-10'>
+           <img src={selectedProduct ? selectedProduct.images[0] : product?.variants[0]?.images[0]} alt="()" className='w-full h-full object-cover' />
+           <button onClick={() => openModal(product.id)} className='bg-primaryColor text-white grid place-items-center w-6 h-6 rotate-90 absolute top-3 right-3 rounded-md'>
                 <FaEye />
            </button> 
      </div>
@@ -30,9 +48,11 @@ const Card = ({product, id}) => {
            {product.description}
          </p>
          <div className='flex justify-between'>
-             <div className='space-x-2'>
+             <div className='space-x-2 flex justify-center items-center'>
                   {product.variants.map((variant, index) => {
-                      return  <button key={index} className='border rounded-full w-4 h-4 p-2 relative'>
+                      return  <button onClick={() => {setProductColor(product.id, variant.color)
+                             handleActiveIndex(index)
+                      }} key={index} className={`border rounded-full w-4 h-4 p-2 relative transition-all duration-200 ease-linear ${activeIndex === index ? "w-5 h-5": ""}`}>
                      <span className='inline-block w-3 h-3  rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' style={{
                       backgroundColor: variant.color
                      }}></span>
@@ -47,7 +67,7 @@ const Card = ({product, id}) => {
          </div>
     </div>
 </div>
-   <CardModal isVisible={isCardModalVisible} setIsVisible={handleCardVisibility} product={product} setFilterColor = {(e) => setFilterColor(e.target.value)} />
+    <CardModal cardID = {product.id} product={product}/>
 </div>
   )
 }

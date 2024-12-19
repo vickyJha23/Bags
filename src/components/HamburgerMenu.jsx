@@ -8,9 +8,8 @@ import useHeaderStore from '../zustand-store/HeaderStore';
 const HambergerMenu = () => {
   const isAccordionVisible =  useHeaderStore((state) => state.isAccordionVisible);
 const hideHamburgerMenu = useHeaderStore((state) => state.hideHamburgerMenu); 
-const hideAccordion = useHeaderStore((state) => state.hideAccordion);
 const isHamburgerMenuVisible =useHeaderStore((state) => state.isHamburgerMenuVisible);     
-// console.log("HambergerMenu");
+const toggleAccordion = useHeaderStore((state) => state.toggleAccordion)
 
 if(!isHamburgerMenuVisible){
      return null;
@@ -31,7 +30,7 @@ if(!isHamburgerMenuVisible){
                     <div className='w-full h-full bg-white px-4 py-4'>
                         <ul className='font-bold space-y-4'>
                                <li className=''>
-                                    <button onClick={hideAccordion} className='flex justify-between items-center w-full'>
+                                    <button onClick={() => toggleAccordion()} className='flex justify-between items-center w-full'>
                                            <span className='font-semibold  text-lg'>
                                                 Shop All   
                                            </span>   

@@ -10,7 +10,7 @@ const PriceDisplayer = ({
 
     return (
         <div className='flex space-x-2'>
-            <p>
+            <p className='font-bold'>
                 Rs. 1600
             </p>
             <p className='text-tertiaryColor'>

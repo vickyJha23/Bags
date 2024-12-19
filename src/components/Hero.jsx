@@ -19,7 +19,7 @@ import Button from './Button';
 
 const Hero = () => {
   return (
-    <div className='w-full h-screen md:h-[70vh] bg-secondaryColor relative select-none'>
+    <div className='w-full h-auto py-4 lg:py-0 lg:h-[70vh] bg-secondaryColor relative select-none'>
             <div className='w-full lg:w-2/3 absolute top-0 left-0 z-0 h-full bg-no-repeat bg-center bg-cover grid place-items-center' style={{
                  backgroundImage: `url(${images.homeBanner})`
             }}>   
@@ -39,8 +39,8 @@ const Hero = () => {
       }}
       cssMode={true}
       mousewheel={true}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      // onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log('slide change')}
       className='w-full h-full !flex !justify-center !items-center'
     >
 

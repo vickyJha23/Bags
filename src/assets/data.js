@@ -1,9 +1,29 @@
 import images from "./images/image";
 
 
+function generateID () {
+  // generated the 8 bit number array whose length is 16
+ // then added random number to each element of the array using crypto
+ // then again created an array with the help of array.from()
+ // and then the array is being converted into string with the help of join method
+   const array = new Uint8Array(16);
+   window.crypto.getRandomValues(array);
+   return Array.from(array, (byte) => {
+       // accessed each element of the array and converted into hex decimal and assured that each value is 2 digit with the padStart
+       const hex = byte.toString(16).padStart(2, "0"); // this line assures that each number should have 2 digits
+       return hex;
+   }).join("");
+}
+
+
+
+
+
+
+
 const heroBannerData = [
   {
-    id: 1,
+    id: generateID(),
     sectionTitle: "Bags that Define Sophistication",
     sectionDescription:
       "Discover a collection of bags that effortlessly exude elegance and refinement, making a statement wherever you go. From sleek silhouettes.",
@@ -30,7 +50,7 @@ const heroBannerData = [
       ],
     },
   },
-  { id: 2,
+  { id: generateID(),
     sectionTitle: "Bags for exploring in style",
     sectionDescription:
       "Embrace your adventurous side with our collection of bags designed for the modern explorer.These bags combine",
@@ -67,7 +87,7 @@ Warranty type: Manufacturer; 1 year International warranty valid for 1 year from
 
 
 const Bags = [
-  { id: 1, 
+  { id: generateID(), 
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -100,7 +120,7 @@ const Bags = [
     quantity: 1,
   },
   {
-    id: 2,
+    id: generateID(),
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -133,7 +153,7 @@ const Bags = [
     quantity: 1,
   },
   {
-    id: 3,
+    id: generateID(),
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -166,7 +186,7 @@ const Bags = [
     quantity: 1,
   },
   {
-    id: 4,
+    id: generateID(),
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -199,7 +219,7 @@ const Bags = [
     quantity: 1,
   },
   {
-    id: 5,
+    id: generateID(),
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -232,7 +252,7 @@ const Bags = [
     quantity: 1,
   },
   {
-    id: 6,
+    id: generateID(),
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -265,7 +285,7 @@ const Bags = [
     quantity: 1,
   },
   {
-    id: 7,
+    id: generateID(),
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -298,7 +318,7 @@ const Bags = [
     quantity: 1,
   },
   {
-    id: 8,
+    id: generateID(),
     brand: "GoHustle",
     name: "William Backpack",
     description:
@@ -332,7 +352,7 @@ const Bags = [
   }
 ];
 
-
+console.log(Bags);
 
 
 

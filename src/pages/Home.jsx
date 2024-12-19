@@ -15,6 +15,7 @@ import FeaturedProducts from '../components/FeaturedProducts';
 import Button from '../components/Button'; 
 
 
+
 const Home = () => {
   return (
     <main className='w-full h-auto'>

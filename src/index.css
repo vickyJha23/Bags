@@ -25,7 +25,7 @@
           transform: none !important;
      }
      @media screen and (max-width: 1024px){
-          .swiper-pagination-bullet{
+            .swiper-pagination-bullet{
                display: none !important;
           }
      }
@@ -38,6 +38,7 @@
           padding: 2px 20px !important;
           opacity: 1 !important;
           transition: all 0.5s linear;
+          z-index: 1 !important;
      }
      
      .swiper-button-next::after, .swiper-button-prev::after{
@@ -47,7 +48,7 @@
      .swiper-wrapper{
           transform: none !important;
           height: auto !important;
-          
+          /* z-index: -1 !important; */
      }
      #bagCardContainer .swiper-button-prev, #bagCardContainer .swiper-button-next{
             transform: scale(0) !important;
@@ -56,18 +57,21 @@
      #bagCardContainer .swiper-pagination{
           position: relative !important;
           bottom: 0px;
-          z-index: 50;
+          /* z-index: 1; */
      }
      #bagCardContainer .swiper:hover .swiper-button-prev, #bagCardContainer .swiper:hover .swiper-button-next {
            transform: scale(1) !important;
      }
-   @media screen and (max-width: 1024px){
-     /* #bagCardContainer .swiper-pagination {
-           /* bottom: 0px !important; 
-     } */
-     #bagCardContainer .swiper-pagination-bullet{
-          display: block !important;
-     }
-
+     #cardModal .swiper-button-prev, #cardModal .swiper-button-next{
+          transform: scale(1) !important;
+    }
+     @media screen and (max-width: 1024px){
+          /* #bagCardContainer .swiper-pagination {
+               /* bottom: 0px !important; 
+               } */
+               #bagCardContainer .swiper-pagination-bullet, #SmallCardSwiper .swiper-pagination-bullet{
+                    display: block !important;
+               }
+          
    }
 }

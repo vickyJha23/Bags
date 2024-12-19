@@ -4,7 +4,7 @@ import { TiMinus, TiPlus } from "react-icons/ti";
 
 const CounterComponent = () => {
   return (
-    <div className='hidden lg:flex lg:items-center border-2 overflow-hidden border-[#ccc] rounded-[20px]'>
+    <div className='hidden lg:flex lg:items-center border-2 overflow-hidden border-[#fff] rounded-[20px]'>
          <button className='px-3 py-2 text-lg'>
               <TiMinus />      
          </button> 
