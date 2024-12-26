@@ -4,7 +4,7 @@ import { FaEye, FaMinus, FaPlus } from "react-icons/fa";
 
 const SmallCard = ({ product }) => {
   return (
-    <div className='w-full h-full border-2 border-yellow-600 rounded-md py-2 px-3 relative !-z-50'>
+    <div id='smallCard' className='w-full h-full border-2 border-yellow-600 rounded-md py-2 px-3 relative !-z-50'>
     <img src="https://bags-workdo.myshopify.com/cdn/shop/products/2_4985da47-8861-4eab-bc3f-77ce33213698_600x600.png?v=1682060666" alt="()" className='w-full h-full object-cover mx-auto' /> 
     <button className='text-white absolute top-2 right-2 bg-primaryColor w-6 h-6 grid place-items-center shadow rounded-md rotate-90'>        
         <FaEye  size={15}/>

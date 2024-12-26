@@ -43,8 +43,12 @@ const MyBags = () => {
       <div
         style={{
           background: `url("https://bags-workdo.myshopify.com/cdn/shop/files/cat-bnr.png?v=1682418988")`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+
         }}
-        className="w-full !h-[80vh] bg-center bg-no-repeat bg-cover -mt-[220px]"
+        className="w-full !h-[60vh] -mt-[220px]"
       >
         <div className="w-full max-w-[1180px] mx-auto h-full px-3">
           <div className="h-full pt-72 lg:pt-60">

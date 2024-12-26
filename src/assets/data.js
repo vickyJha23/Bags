@@ -352,7 +352,6 @@ const Bags = [
   }
 ];
 
-console.log(Bags);
 
 
 

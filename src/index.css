@@ -4,6 +4,9 @@
 
 
 @layer components {
+     /* .swiper {
+           position: static !important;
+     } */
      .swiper-pagination{
           position: absolute !important;
           /* background: red; */
