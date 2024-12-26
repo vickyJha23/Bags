@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 import Button from './Button';
 import Feed from './Feed';
 import SmallCard from './SmallCard';
-
+import FashionTestimonial from './FashionTestimonial';
 
 
 // static data import
@@ -21,7 +21,7 @@ import { Bags } from '../assets/data'
 
 const MyBags = () => {
   return (
-    <div className="w-full h-full">
+    <section className="realtive w-full h-auto">
       <div className="w-full max-w-[1180px] mx-auto !h-full px-3">
         <div className="text-center">
           <h5 className="text-black text-center font-bold">Bags</h5>
@@ -196,8 +196,10 @@ const MyBags = () => {
           </div>
 
         </div>
+        {/* {Fashion Testimonial}  */}
+        <FashionTestimonial />  
       </div>
-    </div>
+    </section>
   );
 }
 

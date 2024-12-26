@@ -37,10 +37,8 @@ const Home = () => {
          <div className='relative pb-10'>
               <FeaturedProducts />
          </div>
-        </section>
-        <section className='relative w-full h-auto'>
-            <MyBags />
-        </section> 
+      </section>
+       <MyBags />
     </main>
   )
 }
